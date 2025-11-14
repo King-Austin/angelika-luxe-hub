@@ -126,7 +126,6 @@ const Gallery = () => {
                   <div className="embla__slide min-w-full" key={idx}>
                     <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden cursor-pointer" onClick={() => openAt(idx)}>
                       <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-cover" />
-                      <div className="absolute left-4 bottom-4 text-white bg-black/40 px-3 py-1 rounded-md text-sm">{item.alt}</div>
                     </div>
                   </div>
                 ))}

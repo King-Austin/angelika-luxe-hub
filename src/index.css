@@ -7,6 +7,24 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Prevent iOS automatic text-size adjustments (helps avoid unwanted zooming) */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Make media responsive and prevent layout overflow */
+  img, video, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Improve touch behavior and reduce double-tap zoom on interactive elements */
+  button, a, input, textarea {
+    touch-action: manipulation;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 30 8% 20%;
