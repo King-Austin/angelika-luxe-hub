@@ -10,18 +10,18 @@ const destDir = path.resolve(__dirname, '..', 'public');
 const dest = path.join(destDir, 'preview.jpg');
 
 if (!fs.existsSync(src)) {
-  console.error('Source image not found:', src);
-  process.exit(1);
+    console.error('Source image not found:', src);
+    process.exit(1);
 }
 
 if (!fs.existsSync(destDir)) {
-  fs.mkdirSync(destDir, { recursive: true });
+    fs.mkdirSync(destDir, { recursive: true });
 }
 
 try {
-  fs.copyFileSync(src, dest);
-  console.log('Preview image created at', dest);
+    fs.copyFileSync(src, dest);
+    console.log('Preview image created at', dest);
 } catch (err) {
-  console.error('Failed to create preview image:', err);
-  process.exit(1);
+    console.error('Failed to create preview image:', err);
+    process.exit(1);
 }
