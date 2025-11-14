@@ -9,6 +9,8 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  // include uppercase JPG/JPEG assets so Vite's import analysis recognizes them
+  assetsInclude: ['**/*.JPG', '**/*.JPEG'],
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

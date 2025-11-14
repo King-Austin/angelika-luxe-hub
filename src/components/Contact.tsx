@@ -86,7 +86,7 @@ const Contact = () => {
               <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com/deangelikabeautylounge"
+                  href="https://instagram.com/de_angelikabeautylounge"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-tan/10 rounded-full hover:bg-tan hover:text-white transition-smooth"
