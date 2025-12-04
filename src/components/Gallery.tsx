@@ -143,7 +143,14 @@ const Gallery = () => {
               className="relative overflow-hidden rounded-lg shadow-card group cursor-pointer aspect-square p-0 border-0 bg-transparent"
               aria-label={`Open image: ${image.alt}`}
             >
-              <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img 
+            src={image.src} 
+            alt={image.alt} 
+            loading="lazy"
+            decoding="async"
+            className="..." 
+            style={{ contentVisibility: 'auto' }}
+          />
               <div className="absolute inset-0 bg-tan/0 group-hover:bg-tan/20 transition-all duration-300" />
             </button>
           ))}
