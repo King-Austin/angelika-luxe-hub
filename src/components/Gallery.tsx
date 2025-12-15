@@ -1,40 +1,23 @@
+"use client";
+
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-// Note: some earlier gallery images were removed from the assets folder.
-// Only import the images that are present to avoid build errors.
-import gallery4 from '@/assets/gallery-4.jpg';
-import gallery6 from '@/assets/gallery-6.jpg';
-import gallery7 from '@/assets/gallery-7.jpg';
-
-// New high-quality images (IMG_*) placed in assets
-import img1962 from '@/assets/IMG_1962.JPG';
-import img3028 from '@/assets/IMG_3028@1647591925.JPG';
-import img3788 from '@/assets/IMG_3788.JPG';
-import img1823 from '@/assets/IMG_1823@962415802.JPG';
-import img9631 from '@/assets/IMG_9631@271771341.JPG';
-import img9828 from '@/assets/IMG_9828@2024614199.JPG';
-// Recently added image1..image5 files
-import image1 from '@/assets/image1.jpg';
-import image2 from '@/assets/image2.jpg';
-import image3 from '@/assets/image3.jpg';
-import image4 from '@/assets/image4.jpg';
-import image5 from '@/assets/image5.jpg';
 
 const galleryImages = [
   // Newly added image1..image5 (placed first to feature them)
-  { src: image2, alt: 'Featured salon transformation — image2' },
-  { src: image3, alt: 'Featured salon transformation — image3' },
-  { src: image4, alt: 'Featured salon transformation — image4' },
-  { src: image5, alt: 'Featured salon transformation — image5' },
+  { src: '/assets/image2.jpg', alt: 'Featured salon transformation — image2' },
+  { src: '/assets/image3.jpg', alt: 'Featured salon transformation — image3' },
+  { src: '/assets/image4.jpg', alt: 'Featured salon transformation — image4' },
+  { src: '/assets/image5.jpg', alt: 'Featured salon transformation — image5' },
   // Prioritize other high-quality IMG_* next
-  { src: img1962, alt: 'Hair styling transformation — salon result (IMG_1962)' },
-  { src: img3028, alt: 'Braiding and styling result — salon work (IMG_3028)' },
-  { src: img3788, alt: 'Makeup application — client result (IMG_3788)' },
-  { src: img1823, alt: 'Manicure and nail art — salon result (IMG_1823)' },
-  { src: img9631, alt: 'Frontal installation — styled salon result (IMG_9631)' },
-  { src: img9828, alt: 'Beard grooming and styling result — salon service (IMG_9828)' },
+  { src: '/assets/IMG_1962.JPG', alt: 'Hair styling transformation — salon result (IMG_1962)' },
+  { src: '/assets/IMG_3028@1647591925.JPG', alt: 'Braiding and styling result — salon work (IMG_3028)' },
+  { src: '/assets/IMG_3788.JPG', alt: 'Makeup application — client result (IMG_3788)' },
+  { src: '/assets/IMG_1823@962415802.JPG', alt: 'Manicure and nail art — salon result (IMG_1823)' },
+  { src: '/assets/IMG_9631@271771341.JPG', alt: 'Frontal installation — styled salon result (IMG_9631)' },
+  { src: '/assets/IMG_9828@2024614199.JPG', alt: 'Beard grooming and styling result — salon service (IMG_9828)' },
   // Existing gallery images (kept for variety)
-  { src: gallery7, alt: 'Professional frontal installation' },
+  { src: '/assets/gallery-7.jpg', alt: 'Professional frontal installation' },
 ];
 
 const AUTOPLAY_INTERVAL = 3500;
@@ -143,14 +126,14 @@ const Gallery = () => {
               className="relative overflow-hidden rounded-lg shadow-card group cursor-pointer aspect-square p-0 border-0 bg-transparent"
               aria-label={`Open image: ${image.alt}`}
             >
-                    <img 
-            src={image.src} 
-            alt={image.alt} 
-            loading="lazy"
-            decoding="async"
-            className="..." 
-            style={{ contentVisibility: 'auto' }}
-          />
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+                className="..."
+                style={{ contentVisibility: 'auto' }}
+              />
               <div className="absolute inset-0 bg-tan/0 group-hover:bg-tan/20 transition-all duration-300" />
             </button>
           ))}

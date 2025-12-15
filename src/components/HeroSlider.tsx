@@ -1,23 +1,22 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroHaircut from '@/assets/hero-haircut.jpg';
-import heroBraiding from '@/assets/hero-braiding.jpg';
-import heroNails from '@/assets/hero-nails.jpg';
 
 const slides = [
   {
-    image: heroHaircut,
+    image: '/assets/hero-haircut.jpg',
     title: 'Redefine Your Look with Confidence ✨',
     alt: 'Professional barber service at De Angelika Beauty Lounge'
   },
   {
-    image: heroBraiding,
+    image: '/assets/hero-braiding.jpg',
     title: 'Luxury Beauty & Grooming for Men and Women 💇‍♀️💅',
     alt: 'Hair braiding and styling services'
   },
   {
-    image: heroNails,
+    image: '/assets/hero-nails.jpg',
     title: "Book, Relax, and Let's Pamper You 💖",
     alt: 'Professional nail services at De Angelika Beauty Lounge'
   }
@@ -51,9 +50,8 @@ const HeroSlider = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <img
             src={slide.image}
@@ -61,7 +59,7 @@ const HeroSlider = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-tan/40 via-tan/20 to-transparent" />
-          
+
           <div className="absolute inset-0 flex items-center">
             <div className="container mx-auto px-6">
               <div className="max-w-2xl">
@@ -114,9 +112,8 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50'
-            }`}
+            className={`h-2 rounded-full transition-all ${index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50'
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

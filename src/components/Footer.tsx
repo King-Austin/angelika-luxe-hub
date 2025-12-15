@@ -1,4 +1,14 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+
 const Footer = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -7,14 +17,13 @@ const Footer = () => {
   };
 
   // JSON-LD for LocalBusiness / BeautySalon to improve SEO.
-  // Uses window.location.origin at runtime so the URL is accurate in dev and production.
-  const siteOrigin = typeof window !== 'undefined' ? window.location.origin : '';
-  const jsonLd = {
+  // Only render on client to avoid hydration mismatch
+  const jsonLd = mounted ? {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
     name: 'De Angelika Beauty Lounge',
     description: 'De Angelika Beauty Lounge — redefining beauty and grooming excellence in Nigeria.',
-    url: siteOrigin || '/',
+    url: window.location.origin,
     sameAs: [
       'https://www.instagram.com/de_angelikabeautylounge',
       'https://www.tiktok.com/@de_angelikabeautylounge',
@@ -23,7 +32,7 @@ const Footer = () => {
     openingHours: ['Mo-Sa 09:00-19:00', 'Su 10:00-17:00'],
     areaServed: 'Nigeria'
     // Add telephone, address, and logo when available to strengthen local SEO
-  };
+  } : null;
 
   return (
     <footer className="bg-tan text-white py-12">
@@ -130,11 +139,13 @@ const Footer = () => {
         </div>
 
         {/* JSON-LD structured data for search engines */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {mounted && jsonLd && (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        )}
 
         <div className="pt-8 border-t border-white/20 text-center text-white/80">
           <p>&copy; {new Date().getFullYear()} De Angelika Beauty Lounge. All rights reserved.</p>

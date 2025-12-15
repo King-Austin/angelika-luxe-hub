@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
