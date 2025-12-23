@@ -16,7 +16,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = 'https://deangelika.com.ng';
+const siteUrl = 'https://www.deangelika.com.ng';
 const siteName = 'De Angelika Beauty Lounge';
 const siteDescription = 'Premium beauty and grooming services in Nigeria. Expert haircuts, luxury braids, professional nails, makeup artistry, and beard grooming. Book your appointment today.';
 
