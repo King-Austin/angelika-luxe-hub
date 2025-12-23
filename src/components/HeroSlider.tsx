@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -53,10 +54,13 @@ const HeroSlider = () => {
           className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
         >
-          <img
+          <Image
             src={slide.image}
             alt={slide.alt}
-            className="h-full w-full object-cover"
+            fill
+            priority={index === 0}
+            className="object-cover"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-tan/40 via-tan/20 to-transparent" />
 

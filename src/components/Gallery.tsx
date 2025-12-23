@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const galleryImages = [
@@ -108,7 +109,7 @@ const Gallery = () => {
                 {galleryImages.map((item, idx) => (
                   <div className="embla__slide min-w-full" key={idx}>
                     <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden cursor-pointer" onClick={() => openAt(idx)}>
-                      <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-cover" />
+                      <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="100vw" />
                     </div>
                   </div>
                 ))}
@@ -126,13 +127,12 @@ const Gallery = () => {
               className="relative overflow-hidden rounded-lg shadow-card group cursor-pointer aspect-square p-0 border-0 bg-transparent"
               aria-label={`Open image: ${image.alt}`}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                loading="lazy"
-                decoding="async"
-                className="..."
-                style={{ contentVisibility: 'auto' }}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
               <div className="absolute inset-0 bg-tan/0 group-hover:bg-tan/20 transition-all duration-300" />
             </button>
@@ -146,8 +146,8 @@ const Gallery = () => {
 
             <button className="absolute left-6 top-1/2 -translate-y-1/2 text-white text-3xl" onClick={showPrev} aria-label="Previous">‹</button>
 
-            <div className="max-w-[90vw] max-h-[90vh] rounded-md overflow-hidden">
-              <img src={galleryImages[currentIndex].src} alt={galleryImages[currentIndex].alt} className="w-full h-full object-contain bg-black" />
+            <div className="relative max-w-[90vw] max-h-[90vh] aspect-[4/3] rounded-md overflow-hidden">
+              <Image src={galleryImages[currentIndex].src} alt={galleryImages[currentIndex].alt} fill className="object-contain bg-black" sizes="90vw" />
             </div>
 
             <button className="absolute right-6 top-1/2 -translate-y-1/2 text-white text-3xl" onClick={showNext} aria-label="Next">›</button>
