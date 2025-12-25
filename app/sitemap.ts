@@ -11,13 +11,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 1.0,
         },
-        // Add more routes here as the site grows
-        // Example:
-        // {
-        //   url: `${baseUrl}/services`,
-        //   lastModified: currentDate,
-        //   changeFrequency: 'monthly',
-        //   priority: 0.8,
-        // },
+        {
+            url: `${baseUrl}/#about`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/#services`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/#subscription`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/#gallery`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/#contact`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
     ];
 }
