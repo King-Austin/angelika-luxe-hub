@@ -74,7 +74,7 @@
 
 ### Largest Contentful Paint (LCP) - Target: < 2.5s
 - [ ] **Optimize hero images**:
-  - [ ] Convert to WebP/AVIF format
+  - [ ] Convert to WebP/AVIF format 
   - [ ] Implement `priority` loading for hero image
   - [ ] Use Next.js `<Image>` component in `HeroSlider.tsx`
   - [ ] Add proper `width`/`height` attributes
