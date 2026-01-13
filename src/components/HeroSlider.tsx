@@ -43,7 +43,7 @@ const HeroSlider = () => {
   };
 
   const handleBooking = () => {
-    window.open('https://wa.me/2348000000000?text=Hi, I would like to book an appointment', '_blank');
+    window.open('https://wa.me/2349138616079?text=Hi, I would like to book an appointment', '_blank');
   };
 
   return (

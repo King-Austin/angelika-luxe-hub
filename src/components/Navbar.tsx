@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,20 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-serif text-tan-dark">De Angelika</h2>
+          <button
+            onClick={() => scrollToSection('home')}
+            className="flex items-center gap-3 cursor-pointer group"
+            aria-label="Go to home"
+          >
+            <Image
+              src="/favicon.png"
+              alt="De Angelika Logo"
+              width={40}
+              height={40}
+              className="transition-transform group-hover:scale-110"
+            />
+            <h2 className="text-2xl font-serif text-tan-dark group-hover:text-tan transition-colors">De Angelika</h2>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">

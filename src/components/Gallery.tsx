@@ -18,7 +18,6 @@ const galleryImages = [
   { src: '/assets/IMG_9631@271771341.JPG', alt: 'Frontal installation — styled salon result (IMG_9631)' },
   { src: '/assets/IMG_9828@2024614199.JPG', alt: 'Beard grooming and styling result — salon service (IMG_9828)' },
   // Existing gallery images (kept for variety)
-  { src: '/assets/gallery-7.jpg', alt: 'Professional frontal installation' },
 ];
 
 const AUTOPLAY_INTERVAL = 3500;

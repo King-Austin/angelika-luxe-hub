@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
   const [mounted, setMounted] = useState(false);
@@ -27,7 +28,7 @@ const Footer = () => {
     sameAs: [
       'https://www.instagram.com/de_angelikabeautylounge',
       'https://www.tiktok.com/@de_angelikabeautylounge',
-      'https://wa.link/d6h7io'
+      'https://wa.me/2349138616079'
     ],
     openingHours: ['Mo-Sa 09:00-19:00', 'Su 10:00-17:00'],
     areaServed: 'Nigeria'
@@ -39,9 +40,18 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-playfair font-bold mb-4">
-              De Angelika Beauty Lounge
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/favicon.png"
+                alt="De Angelika Logo"
+                width={48}
+                height={48}
+                className="filter brightness-0 invert"
+              />
+              <h3 className="text-2xl font-playfair font-bold">
+                De Angelika Beauty Lounge
+              </h3>
+            </div>
             <p className="text-white/80">
               Redefining beauty and grooming excellence in Nigeria
             </p>
@@ -94,13 +104,16 @@ const Footer = () => {
               <p>Monday - Saturday: 9AM - 7PM</p>
               <p>Sunday: 10AM - 5PM</p>
               <p>
-                Preferred contact: <a href="https://wa.link/d6h7io" target="_blank" rel="noopener noreferrer" className="underline text-white/90" title="Chat on WhatsApp">WhatsApp</a>
+                <a href="tel:+2349138616079" className="text-white/90 hover:text-white transition-colors">+234 913 861 6079</a>
+              </p>
+              <p>
+                Preferred contact: <a href="https://wa.me/2349138616079" target="_blank" rel="noopener noreferrer" className="underline text-white/90" title="Chat on WhatsApp">WhatsApp</a>
               </p>
             </address>
 
             <div className="mb-4">
               <a
-                href="https://wa.link/d6h7io"
+                href="https://wa.me/2349138616079"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition"
@@ -147,8 +160,19 @@ const Footer = () => {
           />
         )}
 
-        <div className="pt-8 border-t border-white/20 text-center text-white/80">
-          <p>&copy; {new Date().getFullYear()} De Angelika Beauty Lounge. All rights reserved.</p>
+        <div className="pt-8 border-t border-white/20 text-center space-y-3">
+          <p className="text-white/80">&copy; {new Date().getFullYear()} De Angelika Beauty Lounge. All rights reserved.</p>
+          <p className="text-white/60 text-sm font-light">
+            Built & Powered by{' '}
+            <a 
+              href="https://websyncdigital.com.ng" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-medium text-white/90 hover:text-white transition-colors underline decoration-white/40 hover:decoration-white"
+            >
+              WebSync Digital
+            </a>
+          </p>
         </div>
       </div>
     </footer>

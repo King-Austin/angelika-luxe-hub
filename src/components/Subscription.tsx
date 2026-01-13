@@ -9,7 +9,7 @@ const Subscription = () => {
     // Note: Paystack integration would require backend setup with Lovable Cloud
     // For now, redirecting to WhatsApp for subscription inquiries
     const message = encodeURIComponent('Hi, I would like to subscribe to the Monthly Grooming Plan');
-    window.open(`https://wa.me/2348000000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/2349138616079?text=${message}`, '_blank');
   };
 
   return (

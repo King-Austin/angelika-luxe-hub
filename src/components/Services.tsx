@@ -32,7 +32,7 @@ const services = [
 const Services = () => {
   const handleBookService = (serviceName: string) => {
     const message = encodeURIComponent(`Hi, I would like to book ${serviceName}`);
-    window.open(`https://wa.me/2348000000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/2349138616079?text=${message}`, '_blank');
   };
 
   return (

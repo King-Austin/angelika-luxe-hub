@@ -24,13 +24,31 @@ export default function OrganizationSchema() {
         "sameAs": [
             "https://www.instagram.com/de_angelikabeautylounge",
             "https://www.tiktok.com/@de_angelikabeautylounge",
-            "https://wa.link/d6h7io"
+            "https://wa.me/2349138616079"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
+            "telephone": "+234-913-861-6079",
+            "email": "deangelikabl@gmail.com",
             "contactType": "Customer Service",
             "availableLanguage": ["English"]
-        }
+        },
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "After Ifite School Gate, Opposite Old Fayrouz",
+                "addressLocality": "Ifite Awka",
+                "addressRegion": "Anambra State",
+                "addressCountry": "NG"
+            },
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "No 152 Divine Plaza, 2nd Market/School road, Opposite NedKing Pharmacy & Stores",
+                "addressLocality": "Ifite Awka",
+                "addressRegion": "Anambra State",
+                "addressCountry": "NG"
+            }
+        ]
     } : null;
 
     if (!mounted || !organizationSchema) return null;
